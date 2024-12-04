@@ -8,7 +8,6 @@ from pylab import mpl
 mpl.rcParams['font.sans-serif'] = ['Microsoft YaHei']    
 mpl.rcParams['axes.unicode_minus'] = False   
 
-#读取文件
 study = pd.read_csv('study_information.csv', encoding = 'gbk')
 course = study[['user_id' , 'course_id']].groupby('course_id').count()
 
@@ -28,7 +27,5 @@ popular['popularity'] = popular['number'].apply(lambda x:popular_degree(x))
 popular = popular.sort_values(['popularity'],ascending = False)
 p = popular.head(10)
 
-#画图
 plt.bar(p['course_id'],p['popularity'])
 plt.show()
-
