@@ -5,8 +5,7 @@ from pyecharts.charts import Map
 from pyecharts import options as opts
 from pyecharts.charts import Geo
 from pyecharts.globals import ChartType
-#from pyecharts import Map
-#Read
+
 login = pd.read_csv("login.csv",encoding = "gbk")
 study = pd.read_csv("study_information.csv",encoding = "gbk")
 user = pd.read_csv("users.csv",encoding = "gbk")
@@ -124,8 +123,6 @@ c2 = (
 c2
 
 
-#login.head()
-
 
 #任务2.2
 #把登陆时间转化为星期形式
@@ -145,18 +142,16 @@ login2['Time'] = login2['Time'].apply(lambda x:x + " - " + str(int(x) + 1) )
 login_work = login2[login2['work'] == True]
 login_rest = login2[login2['work'] == False]
 
-
 work = login_work.groupby('Time')['Time'].count()
 rest = login_rest.groupby('Time')['Time'].count()
 
-#记录x轴
 x_list = []
 for x in range(0,24):
     st = "{0}-{1}".format(str(x),str(x+1))
     x_list.append(st)
 
 
-# 画柱状图
+# 柱状图
 import matplotlib.pyplot as plt
 plt.style.use("ggplot")
 fig, ax = plt.subplots(figsize=(10, 7))
