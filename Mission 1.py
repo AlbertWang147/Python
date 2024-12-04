@@ -5,7 +5,6 @@ login = pd.read_csv("login.csv",encoding = "gbk")
 study = pd.read_csv("study_information.csv",encoding = "gbk")
 user = pd.read_csv("users.csv",encoding = "gbk")
 
-#重复值缺失值
 print(login.isnull().sum())
 print(login.duplicated().sum())
 print(study.isnull().sum())
