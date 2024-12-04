@@ -10,7 +10,6 @@ login = pd.read_csv("login.csv",encoding = "gbk")
 study = pd.read_csv("study_information.csv",encoding = "gbk")
 user = pd.read_csv("users.csv",encoding = "gbk")
 
-#重复缺失处理
 user = user.drop_duplicates()
 study = study.dropna(subset=["price"])
 user['school'] = user['school'].fillna('unknown')
@@ -45,7 +44,7 @@ jieba.add_word('内蒙古')
 jieba.add_word('山西')
 jieba.add_word('湖南')
 
-#创建储存个省份与城市的dictionary
+#创建储存省份与城市的dictionary
 province_name = ['北京', '天津', '河北', '山西','内蒙古','辽宁', '吉林', '黑龙江','上海', '江苏', '浙江', '安徽', '福建', '江西','山东', '河南', '湖北', '湖南', '广东', '广西', '海南', '重庆', '四川', '贵州', '云南', '西藏','陕西', '甘肃','青海', '宁夏', '新疆','台湾']
 province = dict()
 for i in province_name:
