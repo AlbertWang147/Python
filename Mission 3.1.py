@@ -4,18 +4,15 @@ import matplotlib.pyplot as plt
 from pylab import mpl
 
 
-#使图表显示中文
 mpl.rcParams['font.sans-serif'] = ['Microsoft YaHei']    
 mpl.rcParams['axes.unicode_minus'] = False   
 
 study = pd.read_csv('study_information.csv', encoding = 'gbk')
 course = study[['user_id' , 'course_id']].groupby('course_id').count()
 
-#得到最多最少人数
 Qmin = course['user_id'].values.min()
 Qmax = course['user_id'].values.max()
 
-#欢迎度计算函数
 def popular_degree(Qi):
     return (Qi-Qmin)/(Qmax-Qmin)
 
