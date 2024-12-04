@@ -6,4 +6,5 @@
 1) Utilize the Pandas library for data preprocessing, and Matplotlib, Pyecharts, and other libraries for data visualization.
 2) Employ collaborative filtering algorithms to provide comprehensive recommendation strategies.
 
+
 Due to confidentiality requirements from my internship company, some parts of the code and data cannot be publicly displayed. Only a partial subset of the code is available in this repository.
